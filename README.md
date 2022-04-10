@@ -1,4 +1,4 @@
-# Personal-Password-Manager (Coming soon)
+# Personal-Password-Manager
 This project is for EDUCATIONAL PURPOSES ONLY. This code will manage your password: generate, make, remove, view
 This project using cryptography library python
 
