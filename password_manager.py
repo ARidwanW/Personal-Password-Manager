@@ -9,29 +9,36 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 # key + password + text to encrypt = random text
 # random text + key + password  = text toencrypt
 
-# def write_key():
-#     key = Fernet.generate_key()
-#     with open("key.key", "wb") as key_file:
-#         key_file.write(key)
+def write_key():
+    key = Fernet.generate_key()
+    with open("key.key", "wb") as key_file:
+        key_file.write(key)
+
+if os.path.isfile("key.key"):
+    pass
+else:
+    write_key()
 
 def load_key():
     with open("key.key", "rb") as file:
         key = file.read()
     return key
 
-# def write_salt():
-#     salt = os.urandom(16)
-#     with open("salt.key", "wb") as salt_file:
-#         salt_file.write(salt)
+def write_salt():
+    salt = os.urandom(16)
+    with open("salt.key", "wb") as salt_file:
+        salt_file.write(salt)
 
-# write_salt()
+if os.path.isfile("key.key"):
+    pass
+else:
+    write_salt()
 
 def load_salt():
     with open("salt.key", "rb") as file:
         salt = file.read()
     return salt
 
-# salt = b'123'
 master_pwd = input("What is the master password? ")
 master_pwd = master_pwd.encode()
 # key = load_key() + master_pwd.encode()
